@@ -16,13 +16,18 @@ module.exports = appInfo => {
       enable: false,
       ignoreJSON: true
     },
+    methodnoallow: {
+      enable: false
+    }, 
     // 白名单
-    domainWhiteList: [ 'http://127.0.0.1:1332' ]
+    domainWhiteList: [ 'http://localhost:8990' ]
   };
 
   config.cors = {
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
+    origin: () => '*'
   };
+  
   config.middleware = [];
 
   config.mongoose = {
